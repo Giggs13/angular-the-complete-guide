@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        (click)="onToggleDisplayDetails()">Display Details
+      </button>
+    </div>
+  </div>
+  <div
+    class="row"
+    *ngIf="isDisplayedDetails()">
+    <div class="col-sm">
+      <div class="alert alert-secondary" role="alert">
+        <h3 class="text-center">Secret Password = tuna</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col sm">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let logItem of logItems; index as i;"
+          [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : inherit}"
+          [ngClass]="{white: i >= 4}">{{ logItem }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

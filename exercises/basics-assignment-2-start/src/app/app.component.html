@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span
+            class="input-group-text"
+            id="basic-addon1">Username</span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Please enter a username..."
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          [(ngModel)]="username">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <h3>You've entered: <span class="badge badge-secondary">{{ username }}</span></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <button
+        type="button"
+        class="btn btn-primary"
+        [disabled]="!username"
+        (click)="onClearUsername()">CLear
+      </button>
+    </div>
+  </div>
+</div>
