@@ -1,0 +1,20 @@
+<div class="container">
+  <app-game-control
+    (incrementNumber)="onCreatedElement($event)"></app-game-control>
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group">
+        <app-odd
+          *ngFor="let item of oddNumbers"
+          [numberItem]="item"></app-odd>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="list-group">
+        <app-even
+          *ngFor="let item of evenNumbers"
+          [numberItem]="item"></app-even>
+      </ul>
+    </div>
+  </div>
+</div>
