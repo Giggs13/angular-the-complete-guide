@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isOpen = false;
   @Output() selectedMenuItem = new EventEmitter<string>();
 
   onChooseMenuItem(selectedMenuItem: string) {

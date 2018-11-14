@@ -8,5 +8,6 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeDetailComponent {
 
+  isOpen = false;
   @Input() recipe: Recipe;
 }

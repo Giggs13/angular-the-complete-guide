@@ -14,12 +14,24 @@
         <a class="nav-link" href="#" (click)="onChooseMenuItem('shopping-list')">Shopping List</a></li>
     </ul>
     <div class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
+      <li
+        class="nav-item dropdown"
+        appDropdown>
+        <a
+          id="navbarDropdownMenuLink"
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          (click)="isOpen = !isOpen">
           Manage
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+          *appDropdownHard="isOpen">
           <a class="dropdown-item" href="#">Save Data</a>
           <a class="dropdown-item" href="#">Fetch Data</a>
         </div>
