@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="inputAccountName">Account Name</label>
+      <input
+        id="inputAccountName"
+        type="text"
+        class="form-control"
+        #accountName>
+    </div>
+    <div class="form-group">
+      <label for="selectStatus">Status</label>
+      <select id="selectStatus" class="form-control" #status>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="hidden">Hidden</option>
+      </select>
+    </div>
+    <button
+      class="btn btn-primary"
+      (click)="onCreateAccount(accountName.value, status.value)">
+      Add Account
+    </button>
+  </div>
+</div>
+
