@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'project-basics';
   showedView: string;
 
   onNavigate(selectedMenuItem) {

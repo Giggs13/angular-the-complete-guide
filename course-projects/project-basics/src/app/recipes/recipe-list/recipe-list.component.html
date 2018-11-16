@@ -7,6 +7,5 @@
 <div class="card-deck">
   <app-recipe-item
     *ngFor="let recipeEl of recipes"
-    [recipe]="recipeEl"
-    (selectedRecipe)="onRecipeSelected(recipeEl)"></app-recipe-item>
+    [recipe]="recipeEl"></app-recipe-item>
 </div>
