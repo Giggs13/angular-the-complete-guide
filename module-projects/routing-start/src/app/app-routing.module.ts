@@ -12,9 +12,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
 
 const ROUTES: Routes = [
-  {
-    path: '', component: HomeComponent
-  },
+  {path: '', component: HomeComponent},
   {
     path: 'users', component: UsersComponent, children: [
       {path: ':id/:name', component: UserComponent}
@@ -30,15 +28,9 @@ const ROUTES: Routes = [
       {path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard]}
     ]
   },
-  /*{
-    path: 'not-found', component: PageNotFoundComponent
-  },*/
-  {
-    path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}
-  },
-  {
-    path: '**', redirectTo: '/not-found'
-  }
+  /*{path: 'not-found', component: PageNotFoundComponent},*/
+  {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({

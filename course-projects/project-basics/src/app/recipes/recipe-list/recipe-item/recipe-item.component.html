@@ -1,8 +1,9 @@
-<div class="card border-secondary mb-3"
-     style="max-width: 18rem;">
-  <a href="#"
-     class="card-link"
-     (click)="onSelected()">
+<div class="card mb-3"
+     style="max-width: 18rem;"
+     routerLinkActive="border-primary">
+  <a class="card-link"
+     style="cursor: pointer"
+     [routerLink]="[id]">
     <img [src]="recipe.imagePath"
          [alt]="recipe.name"
          class="card-img-top">
