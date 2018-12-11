@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from './custom-validators';
 
 enum ProjectStatus {
   STABLE = 'Stable',
@@ -18,13 +19,14 @@ export class AppComponent implements OnInit {
   customForm: FormGroup;
 
   constructor() {
-    this.projectStatuses = Object.keys(ProjectStatus).map((status) => ProjectStatus[status]);
+    this.projectStatuses = Object.keys(ProjectStatus).map(status => ProjectStatus[status]);
   }
 
   ngOnInit(): void {
     this.customForm = new FormGroup({
-      'project-name': new FormControl('', Validators.required),
-      'email': new FormControl('', [Validators.required, Validators.email]),
+      'project-name': new FormControl(null, [Validators.required, CustomValidators.forbiddenProjectName],
+        CustomValidators.forbiddenProjectNameAlso),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
       'project-status': new FormControl(),
     });
 
